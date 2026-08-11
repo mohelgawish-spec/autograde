@@ -218,14 +218,14 @@
   font-size: 0.9rem;
   line-height: 1.5;
   color: var(--muted);
-  padding-left: 18px;
+  padding-inline-start: 18px;
   position: relative;
 }
 
 .card li::before {
   content: "";
   position: absolute;
-  left: 0;
+  inset-inline-start: 0;
   top: 0.55em;
   width: 6px;
   height: 6px;

@@ -1,39 +1,48 @@
+import { Cairo } from "next/font/google";
 import {
   UploadSimple,
   Sparkle,
   CheckCircle,
-  ArrowRight,
+  ArrowLeft,
   ClockCountdown,
   FileText,
 } from "@phosphor-icons/react/dist/ssr";
-import styles from "./page.module.css";
+import styles from "../page.module.css";
 
-export default function Home() {
+const cairo = Cairo({ subsets: ["arabic", "latin"], weight: ["400", "600", "700"] });
+
+export const metadata = {
+  title: "AutoGrade — ملاحظات فورية على الواجبات",
+  description:
+    "أرسل واجبك واحصل على درجة موضوعية مع ملاحظات مكتوبة في أقل من دقيقة.",
+};
+
+export default function HomeArabic() {
   return (
-    <div className={styles.page}>
+    <div dir="rtl" lang="ar" className={`${styles.page} ${cairo.className}`}>
       <header className={styles.header}>
         <div className={styles.brand}>
           <span className={styles.mark}>A</span>
           AutoGrade
         </div>
         <nav className={styles.nav}>
-          <a href="#how-it-works">How it works</a>
-          <a href="#what-it-checks">What it checks</a>
-          <a href="/ar">العربية</a>
+          <a href="#how-it-works">كيف يعمل</a>
+          <a href="#what-it-checks">ما الذي يتم فحصه</a>
+          <a href="/">English</a>
         </nav>
       </header>
 
       <main>
         <section className={styles.hero}>
           <div className={styles.heroText}>
-            <h1>Instant, objective feedback on every assignment.</h1>
+            <h1>ملاحظات فورية وموضوعية على كل واجب.</h1>
             <p>
-              Submit your work and get a score with clear written feedback in
-              under a minute — no more waiting days for grades.
+              أرسل عملك واحصل على درجة مع ملاحظات مكتوبة واضحة في أقل من
+              دقيقة — دون انتظار أيام للحصول على النتيجة.
             </p>
             <a className={styles.cta} href="#how-it-works">
-              See how it works
-              <ArrowRight size={18} weight="bold" />
+              شاهد كيف يعمل
+              <ArrowLeft size={18} weight="bold" />
             </a>
           </div>
           <div className={styles.heroVisual} aria-hidden="true">
@@ -41,82 +50,82 @@ export default function Home() {
               <span className={styles.iconCircle}>
                 <UploadSimple size={22} weight="bold" />
               </span>
-              Submit
+              إرسال
             </div>
-            <ArrowRight size={20} className={styles.flowArrow} />
+            <ArrowLeft size={20} className={styles.flowArrow} />
             <div className={styles.flowStep}>
               <span className={styles.iconCircle}>
                 <Sparkle size={22} weight="bold" />
               </span>
-              Score
+              تقييم
             </div>
-            <ArrowRight size={20} className={styles.flowArrow} />
+            <ArrowLeft size={20} className={styles.flowArrow} />
             <div className={styles.flowStep}>
               <span className={styles.iconCircle}>
                 <CheckCircle size={22} weight="bold" />
               </span>
-              Feedback
+              ملاحظات
             </div>
           </div>
         </section>
 
         <section id="how-it-works" className={styles.section}>
-          <h2>How it works</h2>
+          <h2>كيف يعمل</h2>
           <div className={styles.steps}>
             <div className={styles.step}>
               <span className={styles.iconCircle}>
                 <UploadSimple size={20} weight="bold" />
               </span>
-              <h3>Upload</h3>
-              <p>Choose a .pdf, .docx, or .txt file before the deadline.</p>
+              <h3>الرفع</h3>
+              <p>اختر ملف ‎.pdf أو ‎.docx أو ‎.txt قبل الموعد النهائي.</p>
             </div>
             <div className={styles.step}>
               <span className={styles.iconCircle}>
                 <FileText size={20} weight="bold" />
               </span>
-              <h3>Extract</h3>
-              <p>The text of your submission is read automatically.</p>
+              <h3>الاستخراج</h3>
+              <p>يتم قراءة نص الملف المُرسل تلقائيًا.</p>
             </div>
             <div className={styles.step}>
               <span className={styles.iconCircle}>
                 <Sparkle size={20} weight="bold" />
               </span>
-              <h3>Score</h3>
-              <p>Your work is evaluated against a fixed rubric.</p>
+              <h3>التقييم</h3>
+              <p>يتم تقييم عملك وفق معايير ثابتة.</p>
             </div>
             <div className={styles.step}>
               <span className={styles.iconCircle}>
                 <CheckCircle size={20} weight="bold" />
               </span>
-              <h3>Feedback</h3>
-              <p>You see your score and comments right away.</p>
+              <h3>الملاحظات</h3>
+              <p>تشاهد درجتك وملاحظاتك فورًا.</p>
             </div>
           </div>
         </section>
 
         <section id="what-it-checks" className={styles.section}>
-          <h2>What it checks</h2>
+          <h2>ما الذي يتم فحصه</h2>
           <div className={styles.cards}>
             <div className={styles.card}>
               <span className={styles.iconCircle}>
                 <UploadSimple size={20} weight="bold" />
               </span>
-              <h3>Assignment Submission</h3>
+              <h3>تسليم الواجب</h3>
               <ul>
-                <li>Accepts .pdf, .docx, and .txt files</li>
-                <li>10MB maximum per file</li>
-                <li>Deadline with a grace period</li>
+                <li>يقبل ملفات ‎.pdf و‎.docx و‎.txt</li>
+                <li>بحد أقصى 10 ميجابايت لكل ملف</li>
+                <li>موعد نهائي مع فترة سماح</li>
               </ul>
             </div>
             <div className={styles.card}>
               <span className={styles.iconCircle}>
                 <Sparkle size={20} weight="bold" />
               </span>
-              <h3>Automated Scoring</h3>
+              <h3>التقييم الآلي</h3>
               <ul>
-                <li>Scored 0–100, consistently</li>
-                <li>Written feedback every time</li>
-                <li>Unreadable work is never silently guessed</li>
+                <li>درجة من 0 إلى 100 بشكل ثابت</li>
+                <li>ملاحظات مكتوبة في كل مرة</li>
+                <li>لا يتم تخمين النتيجة أبدًا</li>
               </ul>
             </div>
           </div>
@@ -124,12 +133,11 @@ export default function Home() {
 
         <section className={styles.notice}>
           <ClockCountdown size={18} weight="bold" />
-          Submission is still being built — this page previews how AutoGrade
-          will work.
+          الإرسال لا يزال قيد التطوير — هذه الصفحة تعرض كيف سيعمل AutoGrade.
         </section>
       </main>
 
-      <footer className={styles.footer}>AutoGrade — a course project.</footer>
+      <footer className={styles.footer}>AutoGrade — مشروع دراسي.</footer>
     </div>
   );
 }
