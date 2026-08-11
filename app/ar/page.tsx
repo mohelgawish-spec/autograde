@@ -8,6 +8,7 @@ import {
   FileText,
 } from "@phosphor-icons/react/dist/ssr";
 import styles from "../page.module.css";
+import SubmitPanel from "../components/SubmitPanel";
 
 const cairo = Cairo({ subsets: ["arabic", "latin"], weight: ["400", "600", "700"] });
 
@@ -45,28 +46,7 @@ export default function HomeArabic() {
               <ArrowLeft size={18} weight="bold" />
             </a>
           </div>
-          <div className={styles.heroVisual} aria-hidden="true">
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <UploadSimple size={22} weight="bold" />
-              </span>
-              إرسال
-            </div>
-            <ArrowLeft size={20} className={styles.flowArrow} />
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <Sparkle size={22} weight="bold" />
-              </span>
-              تقييم
-            </div>
-            <ArrowLeft size={20} className={styles.flowArrow} />
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <CheckCircle size={22} weight="bold" />
-              </span>
-              ملاحظات
-            </div>
-          </div>
+          <SubmitPanel locale="ar" />
         </section>
 
         <section id="how-it-works" className={styles.section}>

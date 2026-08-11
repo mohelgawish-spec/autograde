@@ -7,6 +7,7 @@ import {
   FileText,
 } from "@phosphor-icons/react/dist/ssr";
 import styles from "./page.module.css";
+import SubmitPanel from "./components/SubmitPanel";
 
 export default function Home() {
   return (
@@ -36,28 +37,7 @@ export default function Home() {
               <ArrowRight size={18} weight="bold" />
             </a>
           </div>
-          <div className={styles.heroVisual} aria-hidden="true">
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <UploadSimple size={22} weight="bold" />
-              </span>
-              Submit
-            </div>
-            <ArrowRight size={20} className={styles.flowArrow} />
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <Sparkle size={22} weight="bold" />
-              </span>
-              Score
-            </div>
-            <ArrowRight size={20} className={styles.flowArrow} />
-            <div className={styles.flowStep}>
-              <span className={styles.iconCircle}>
-                <CheckCircle size={22} weight="bold" />
-              </span>
-              Feedback
-            </div>
-          </div>
+          <SubmitPanel locale="en" />
         </section>
 
         <section id="how-it-works" className={styles.section}>

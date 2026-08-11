@@ -127,6 +127,52 @@
   font-weight: 500;
 }
 
+/* Submission panel */
+.submitForm {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  width: 100%;
+}
+
+.fileInput {
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.formError {
+  font-size: 0.8125rem;
+  color: #b91c1c;
+}
+
+.resultBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.resultScore {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.resultScoreSuffix {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--muted);
+  margin-inline-start: 4px;
+}
+
+.resultFeedback {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .flowArrow {
   color: var(--border);
   flex-shrink: 0;
